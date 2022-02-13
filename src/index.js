@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import ReactDOM from 'react-dom';
 import './index.module.css';
 import App from './app';
@@ -10,7 +10,7 @@ import CardRepositiry from './service/card_repository';
 const authService = new AuthService();
 const cardRepository = new CardRepositiry();
 const imageUploader = new ImageUploader();
-const FileInput = props => (<ImageFileInput {...props} imageUploader={imageUploader} />);
+const FileInput = memo(props => (<ImageFileInput {...props} imageUploader={imageUploader} />));
 
 ReactDOM.render(
   <React.StrictMode>
